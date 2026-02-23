@@ -129,7 +129,7 @@ final class GoogleOAuthHelper: NSObject, ASWebAuthenticationPresentationContextP
         listener = nil
     }
 
-    private func handleLoopbackConnection(_ connection: NWConnection) {
+    private nonisolated func handleLoopbackConnection(_ connection: NWConnection) {
         connection.start(queue: .main)
         connection.receive(minimumIncompleteLength: 1, maximumLength: 65536) { data, _, _, _ in
             guard let data = data,

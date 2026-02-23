@@ -11,9 +11,10 @@ from app.database import get_db
 from app.models.subscription import Subscription, SubscriptionTier
 from app.models.user import User
 from app.dependencies import get_current_user
-from app.schemas.auth import AppleAuthRequest, AuthResponse, AuthUserInfo, GoogleAuthRequest, RefreshTokenRequest
+from app.schemas.auth import AppleAuthRequest, AuthResponse, AuthUserInfo, ChatGPTAuthRequest, GoogleAuthRequest, RefreshTokenRequest
 from app.services.apple_auth import verify_apple_identity_token
 from app.services.google_auth import exchange_google_auth_code
+from app.services.openai_auth import exchange_chatgpt_auth_code
 from app.services.jwt_service import (
     TOKEN_TYPE_REFRESH,
     create_access_token,
@@ -146,6 +147,31 @@ async def google_sign_in(
         await db.flush()
 
     return await _build_auth_response(db, user)
+
+
+@router.post("/chatgpt/connect", status_code=status.HTTP_200_OK)
+async def chatgpt_connect(
+    body: ChatGPTAuthRequest,
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """Connect a ChatGPT account to the current user (OAuth PKCE)."""
+    try:
+        user_info = await exchange_chatgpt_auth_code(
+            body.authorization_code, body.redirect_uri, body.code_verifier,
+        )
+    except ValueError as exc:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail=str(exc),
+        ) from exc
+
+    current_user.openai_refresh_token = user_info.get("refresh_token")
+    if not current_user.openai_user_id:
+        current_user.openai_user_id = user_info["sub"]
+    await db.flush()
+
+    return {"status": "connected", "email": user_info.get("email")}
 
 
 @router.post("/refresh", response_model=AuthResponse, status_code=status.HTTP_200_OK)

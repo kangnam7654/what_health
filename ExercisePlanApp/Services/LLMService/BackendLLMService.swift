@@ -1,11 +1,21 @@
 import Foundation
 
 final class BackendLLMService: LLMServiceProtocol {
-    var providerType: LLMProviderType { .openAI }
+    var providerType: LLMProviderType {
+        let raw = KeychainHelper.shared.read(for: AppConstants.Keychain.selectedProvider)
+        return LLMProviderType(rawValue: raw ?? "") ?? .openAI
+    }
 
     func sendMessage(messages: [LLMMessage]) async throws -> String {
         let dtos = messages.map { LLMMessageDTO(role: $0.role, content: $0.content) }
-        let requestBody = LLMProxyRequest(messages: dtos, provider: nil)
+        let providerRaw = KeychainHelper.shared.read(for: AppConstants.Keychain.selectedProvider)
+        let provider = LLMProviderType(rawValue: providerRaw ?? "")
+        let providerString: String? = switch provider {
+        case .gemini: "gemini"
+        case .codex: "codex"
+        default: nil
+        }
+        let requestBody = LLMProxyRequest(messages: dtos, provider: providerString)
 
         do {
             let response: LLMProxyResponse = try await APIClient.shared.post(

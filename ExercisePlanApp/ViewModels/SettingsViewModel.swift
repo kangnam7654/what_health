@@ -10,6 +10,7 @@ final class SettingsViewModel {
     var connectionTestResult: ConnectionTestResult?
     var showAlert: Bool = false
     var alertMessage: String = ""
+    var isConnectingChatGPT: Bool = false
 
     enum ConnectionTestResult {
         case success
@@ -23,16 +24,22 @@ final class SettingsViewModel {
     }
 
     func loadAPIKey() {
-        let key = selectedProvider == .openAI
-            ? AppConstants.Keychain.openAIAPIKey
-            : AppConstants.Keychain.geminiAPIKey
+        let key: String
+        switch selectedProvider {
+        case .openAI: key = AppConstants.Keychain.openAIAPIKey
+        case .gemini: key = AppConstants.Keychain.geminiAPIKey
+        case .codex: key = AppConstants.Keychain.openAIAPIKey  // OpenAI와 같은 키 사용
+        }
         apiKey = KeychainHelper.shared.read(for: key) ?? ""
     }
 
     func saveAPIKey() {
-        let key = selectedProvider == .openAI
-            ? AppConstants.Keychain.openAIAPIKey
-            : AppConstants.Keychain.geminiAPIKey
+        let key: String
+        switch selectedProvider {
+        case .openAI: key = AppConstants.Keychain.openAIAPIKey
+        case .gemini: key = AppConstants.Keychain.geminiAPIKey
+        case .codex: key = AppConstants.Keychain.openAIAPIKey
+        }
         _ = KeychainHelper.shared.save(apiKey, for: key)
         _ = KeychainHelper.shared.save(selectedProvider.rawValue, for: AppConstants.Keychain.selectedProvider)
     }
@@ -69,6 +76,30 @@ final class SettingsViewModel {
 
     var isAPIKeyConfigured: Bool {
         !apiKey.isEmpty
+    }
+
+    func connectChatGPT() async {
+        isConnectingChatGPT = true
+        defer { isConnectingChatGPT = false }
+
+        do {
+            guard let scene = UIApplication.shared.connectedScenes
+                .compactMap({ $0 as? UIWindowScene })
+                .first,
+                  let window = scene.windows.first else {
+                alertMessage = "화면을 찾을 수 없습니다."
+                showAlert = true
+                return
+            }
+
+            try await AuthManager.shared.connectChatGPT(anchor: window)
+            connectionTestResult = .success
+        } catch {
+            if (error as? AuthError) != .cancelled {
+                alertMessage = error.localizedDescription
+                showAlert = true
+            }
+        }
     }
 
     func onProviderChanged() {

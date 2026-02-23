@@ -9,96 +9,101 @@ struct PlanGeneratorView: View {
     @State private var showHistory = false
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 24) {
-                // Goal Selection
-                VStack(alignment: .leading, spacing: 12) {
-                    sectionHeader("운동 목표")
-                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
-                        ForEach(ExerciseGoal.allCases) { goal in
-                            goalCard(goal)
+        VStack(spacing: 0) {
+            ScrollView {
+                VStack(spacing: 24) {
+                    // Goal Selection
+                    VStack(alignment: .leading, spacing: 12) {
+                        sectionHeader("운동 목표")
+                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
+                            ForEach(ExerciseGoal.allCases) { goal in
+                                goalCard(goal)
+                            }
                         }
                     }
-                }
 
-                // Experience Level
-                VStack(alignment: .leading, spacing: 12) {
-                    sectionHeader("운동 경험")
-                    Picker("경험 수준", selection: $viewModel.selectedExperience) {
-                        ForEach(ExperienceLevel.allCases) { level in
-                            Text(level.rawValue).tag(level)
+                    // Experience Level
+                    VStack(alignment: .leading, spacing: 12) {
+                        sectionHeader("운동 경험")
+                        Picker("경험 수준", selection: $viewModel.selectedExperience) {
+                            ForEach(ExperienceLevel.allCases) { level in
+                                Text(level.rawValue).tag(level)
+                            }
                         }
+                        .pickerStyle(.segmented)
                     }
-                    .pickerStyle(.segmented)
-                }
 
-                // Equipment
-                VStack(alignment: .leading, spacing: 12) {
-                    sectionHeader("사용 가능한 장비")
-                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
-                        ForEach(Equipment.allCases) { equipment in
-                            equipmentChip(equipment)
+                    // Equipment
+                    VStack(alignment: .leading, spacing: 12) {
+                        sectionHeader("사용 가능한 장비")
+                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
+                            ForEach(Equipment.allCases) { equipment in
+                                equipmentChip(equipment)
+                            }
                         }
                     }
-                }
 
-                // Training Days
-                VStack(alignment: .leading, spacing: 12) {
-                    sectionHeader("운동 요일")
-                    HStack(spacing: 8) {
-                        ForEach(DayOfWeek.allCases) { day in
-                            dayButton(day)
+                    // Training Days
+                    VStack(alignment: .leading, spacing: 12) {
+                        sectionHeader("운동 요일")
+                        HStack(spacing: 8) {
+                            ForEach(DayOfWeek.allCases) { day in
+                                dayButton(day)
+                            }
                         }
                     }
-                }
 
-                // Session Duration
-                VStack(alignment: .leading, spacing: 12) {
-                    sectionHeader("세션 시간")
-                    Picker("세션 시간", selection: $viewModel.selectedDuration) {
-                        ForEach(SessionDuration.allCases) { duration in
-                            Text(duration.displayName).tag(duration)
+                    // Session Duration
+                    VStack(alignment: .leading, spacing: 12) {
+                        sectionHeader("세션 시간")
+                        Picker("세션 시간", selection: $viewModel.selectedDuration) {
+                            ForEach(SessionDuration.allCases) { duration in
+                                Text(duration.displayName).tag(duration)
+                            }
                         }
+                        .pickerStyle(.segmented)
                     }
-                    .pickerStyle(.segmented)
-                }
 
-                // Additional Notes
-                VStack(alignment: .leading, spacing: 12) {
-                    sectionHeader("추가 사항")
-                    TextField("예: 허리 통증 있음, 상체 위주 원함...", text: $viewModel.additionalNotes, axis: .vertical)
-                        .lineLimit(3...5)
-                        .textFieldStyle(.roundedBorder)
-                }
-
-                // Generate Button
-                Button {
-                    Task {
-                        await viewModel.generatePlan()
-                        if viewModel.generatedPlan != nil {
-                            showResult = true
-                        }
+                    // Additional Notes
+                    VStack(alignment: .leading, spacing: 12) {
+                        sectionHeader("추가 사항")
+                        TextField("예: 허리 통증 있음, 상체 위주 원함...", text: $viewModel.additionalNotes, axis: .vertical)
+                            .lineLimit(3...5)
+                            .textFieldStyle(.roundedBorder)
                     }
-                } label: {
-                    HStack {
-                        if viewModel.isGenerating {
-                            ProgressView()
-                                .tint(.white)
-                        } else {
-                            Image(systemName: "sparkles")
-                        }
-                        Text(viewModel.isGenerating ? "생성 중..." : "AI 운동 플랜 생성")
-                    }
-                    .font(.headline)
-                    .foregroundStyle(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(viewModel.canGenerate && !viewModel.isGenerating ? Color.blue : Color.gray)
-                    .clipShape(RoundedRectangle(cornerRadius: 12))
                 }
-                .disabled(!viewModel.canGenerate || viewModel.isGenerating)
+                .padding()
             }
-            .padding()
+
+            // Generate Button (fixed at bottom)
+            Button {
+                Task {
+                    await viewModel.generatePlan()
+                    if viewModel.generatedPlan != nil {
+                        showResult = true
+                    }
+                }
+            } label: {
+                HStack {
+                    if viewModel.isGenerating {
+                        ProgressView()
+                            .tint(.white)
+                    } else {
+                        Image(systemName: "sparkles")
+                    }
+                    Text(viewModel.isGenerating ? "생성 중..." : "AI 운동 플랜 생성")
+                }
+                .font(.headline)
+                .foregroundStyle(.white)
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(viewModel.canGenerate && !viewModel.isGenerating ? Color.blue : Color.gray)
+                .clipShape(RoundedRectangle(cornerRadius: 12))
+            }
+            .disabled(!viewModel.canGenerate || viewModel.isGenerating)
+            .padding(.horizontal)
+            .padding(.vertical, 8)
+            .background(.bar)
         }
         .navigationTitle("운동 플랜")
         .toolbar {

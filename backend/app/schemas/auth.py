@@ -13,6 +13,12 @@ class GoogleAuthRequest(BaseModel):
     redirect_uri: str = "urn:ietf:wg:oauth:2.0:oob"
 
 
+class ChatGPTAuthRequest(BaseModel):
+    authorization_code: str
+    redirect_uri: str
+    code_verifier: str
+
+
 class AuthUserInfo(BaseModel):
     id: str
     email: str | None = None

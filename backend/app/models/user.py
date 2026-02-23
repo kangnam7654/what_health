@@ -14,6 +14,8 @@ class User(Base):
     google_user_id: Mapped[str | None] = mapped_column(String(255), unique=True, nullable=True, index=True)
     email: Mapped[str | None] = mapped_column(String(255), unique=True, nullable=True, index=True)
     google_refresh_token: Mapped[str | None] = mapped_column(String(512), nullable=True)
+    openai_user_id: Mapped[str | None] = mapped_column(String(255), unique=True, nullable=True, index=True)
+    openai_refresh_token: Mapped[str | None] = mapped_column(String(512), nullable=True)
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
         default=lambda: datetime.now(timezone.utc),

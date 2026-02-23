@@ -10,7 +10,7 @@ class Message(BaseModel):
 
 class LLMProxyRequest(BaseModel):
     messages: list[Message]
-    provider: Literal["openai", "gemini"] = "openai"
+    provider: Literal["openai", "gemini", "codex"] = "openai"
     model: str | None = None
     max_tokens: int = 2048
     temperature: float = 0.7

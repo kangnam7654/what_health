@@ -22,6 +22,23 @@ struct GoogleAuthRequest: Codable {
     }
 }
 
+struct ChatGPTAuthRequest: Codable {
+    let authorizationCode: String
+    let redirectURI: String
+    let codeVerifier: String
+
+    enum CodingKeys: String, CodingKey {
+        case authorizationCode = "authorization_code"
+        case redirectURI = "redirect_uri"
+        case codeVerifier = "code_verifier"
+    }
+}
+
+struct ChatGPTConnectResponse: Codable {
+    let status: String
+    let email: String?
+}
+
 // MARK: - LLM Proxy
 
 struct LLMProxyRequest: Codable {

@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @Environment(StoreManager.self) private var storeManager
+    @State private var settingsViewModel = SettingsViewModel()
 
     var body: some View {
         Form {
@@ -25,6 +26,20 @@ struct SettingsView: View {
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                         }
+                    }
+                }
+            }
+
+            Section("AI 모델") {
+                NavigationLink {
+                    ProviderSettingsView(viewModel: settingsViewModel)
+                } label: {
+                    HStack {
+                        Label("Provider 설정", systemImage: "cpu")
+                        Spacer()
+                        Text(settingsViewModel.selectedProvider.rawValue)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
                     }
                 }
             }

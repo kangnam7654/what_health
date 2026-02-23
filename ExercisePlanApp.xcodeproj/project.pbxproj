@@ -39,6 +39,7 @@
 		973ACE0C59F7ABA34095BC74 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFAD74B1CED7B8DD7F61BDC /* APIClient.swift */; };
 		98ADE3E3FDCFED6C96CF8CA6 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A114C878F05DA1EE15C4E /* ChatViewModel.swift */; };
 		9A112FFBBE49FB06CD5D566A /* LLMServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA5C21AB1AE55A117885CEB /* LLMServiceProtocol.swift */; };
+		9E61F8CCDB08B056DA34BBDE /* ChatGPTOAuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6980B57CC685031503B3055 /* ChatGPTOAuthHelper.swift */; };
 		A443B5E5C9F46F00E0E267A1 /* QuotaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DFAAFF639DB114D775D4A6 /* QuotaView.swift */; };
 		A66B3977BD4990D20FF49161 /* CodableTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1E6386278D72040F76262B /* CodableTypes.swift */; };
 		A7B9F7512DEA44BAD050E73C /* WorkoutTrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A3EB37A08E59A14B063D6 /* WorkoutTrackingViewModel.swift */; };
@@ -49,6 +50,7 @@
 		D0C39D5749B7BC6EF541086C /* ErrorBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBDA248F7CB0B7DE5357925 /* ErrorBannerView.swift */; };
 		D59D65F853254F1D13112B1B /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE58D8287B524BD01A4963E /* LoadingOverlay.swift */; };
 		D68FDE21AB64D15033916B9F /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C320944E37DDD50417F3FA /* AuthManager.swift */; };
+		E9ADD256AA565F7ABC800049 /* ProviderSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608DA0DBEAF43F072D1E99BA /* ProviderSettingsView.swift */; };
 		F1ACEB92A1F0E22CFBB01DFE /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2985E150C84350D73EE0517 /* StoreManager.swift */; };
 		F3F70B6221B62F96B977AEC0 /* BackendLLMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1AF7A363D3749BF5F6340A /* BackendLLMService.swift */; };
 		FB24908CDE444302AA76EB5A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65673E1EC42E5BA69755004 /* Constants.swift */; };
@@ -73,6 +75,7 @@
 		57CC17ACA16FB67FCDFD4946 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		5BE58D8287B524BD01A4963E /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
 		5CF1958E955006A29ED289D7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		608DA0DBEAF43F072D1E99BA /* ProviderSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderSettingsView.swift; sourceTree = "<group>"; };
 		631EFC238942F555A64C28DE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		6A48BD7B5CC332FB4C5A0B27 /* PlanDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailView.swift; sourceTree = "<group>"; };
 		6B1AF7A363D3749BF5F6340A /* BackendLLMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendLLMService.swift; sourceTree = "<group>"; };
@@ -102,6 +105,7 @@
 		F6521A2377DF42C8E9C983D4 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		F65673E1EC42E5BA69755004 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F67C47AD2EDD94E22BAD7A58 /* LLMServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLMServiceFactory.swift; sourceTree = "<group>"; };
+		F6980B57CC685031503B3055 /* ChatGPTOAuthHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTOAuthHelper.swift; sourceTree = "<group>"; };
 		FA473919CD4D50713C8760D7 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		FBBDA248F7CB0B7DE5357925 /* ErrorBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorBannerView.swift; sourceTree = "<group>"; };
 		FDC35ED55FFE572853456D3C /* WorkoutLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutLog.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				C0F0378DE4F575F637305974 /* AccountView.swift */,
+				608DA0DBEAF43F072D1E99BA /* ProviderSettingsView.swift */,
 				12DFAAFF639DB114D775D4A6 /* QuotaView.swift */,
 				631EFC238942F555A64C28DE /* SettingsView.swift */,
 				D4ED5B4DC8E83A9CEF5CF9D7 /* SubscriptionView.swift */,
@@ -244,6 +249,7 @@
 			children = (
 				89C320944E37DDD50417F3FA /* AuthManager.swift */,
 				9C308185A9D5842BCAB66593 /* AuthUser.swift */,
+				F6980B57CC685031503B3055 /* ChatGPTOAuthHelper.swift */,
 				2FD4CDF81CE14285E8F38A1F /* GoogleOAuthHelper.swift */,
 			);
 			path = Auth;
@@ -383,6 +389,7 @@
 				D68FDE21AB64D15033916B9F /* AuthManager.swift in Sources */,
 				8FE543DF176D13F29A3CE1AD /* AuthUser.swift in Sources */,
 				F3F70B6221B62F96B977AEC0 /* BackendLLMService.swift in Sources */,
+				9E61F8CCDB08B056DA34BBDE /* ChatGPTOAuthHelper.swift in Sources */,
 				BA2A0357A6CA4956DA4448AD /* ChatModels.swift in Sources */,
 				042C935C8E9242F9EF74D742 /* ChatSessionListView.swift in Sources */,
 				8BD1F182DAB5237E9CC3D140 /* ChatView.swift in Sources */,
@@ -413,6 +420,7 @@
 				1FF8B7AAE7C85EE9A8C75163 /* PlanParser.swift in Sources */,
 				5F424CA0017EA9AF33FFF297 /* PlanResultView.swift in Sources */,
 				8C544E81C6699239410CCD4D /* PromptBuilder.swift in Sources */,
+				E9ADD256AA565F7ABC800049 /* ProviderSettingsView.swift in Sources */,
 				A443B5E5C9F46F00E0E267A1 /* QuotaView.swift in Sources */,
 				6472890297BE8754F0CAD728 /* SettingsView.swift in Sources */,
 				75E5B2383CC883F5F6E34404 /* SettingsViewModel.swift in Sources */,

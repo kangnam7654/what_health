@@ -57,6 +57,7 @@ enum MessageRole: String, Codable {
 enum LLMProviderType: String, Codable, CaseIterable, Identifiable {
     case openAI = "OpenAI"
     case gemini = "Google Gemini"
+    case codex = "OpenAI Codex"
 
     var id: String { rawValue }
 
@@ -64,6 +65,30 @@ enum LLMProviderType: String, Codable, CaseIterable, Identifiable {
         switch self {
         case .openAI: return "gpt-4o-mini"
         case .gemini: return "gemini-2.0-flash"
+        case .codex: return "codex-mini-latest"
+        }
+    }
+
+    var icon: String {
+        switch self {
+        case .openAI: return "brain"
+        case .gemini: return "sparkles"
+        case .codex: return "chevron.left.forwardslash.chevron.right"
+        }
+    }
+
+    var description: String {
+        switch self {
+        case .openAI: return "범용 AI 모델"
+        case .gemini: return "Google OAuth 무료 사용"
+        case .codex: return "ChatGPT OAuth 또는 API 키"
+        }
+    }
+
+    var requiresAPIKey: Bool {
+        switch self {
+        case .gemini, .codex: return false
+        case .openAI: return true
         }
     }
 }

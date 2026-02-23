@@ -17,6 +17,7 @@ class Settings(BaseSettings):
 
     openai_api_key: str = ""
     gemini_api_key: str = ""
+    codex_default_model: str = "codex-mini-latest"
 
     google_client_id: str = ""
     google_client_secret: str = ""

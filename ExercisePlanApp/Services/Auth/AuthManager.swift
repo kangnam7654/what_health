@@ -12,11 +12,14 @@ final class AuthManager: NSObject {
     var jwtToken: String?
     var isLoading: Bool = false
     var errorMessage: String?
+    var isChatGPTConnected: Bool = false
 
     private let googleOAuthHelper = GoogleOAuthHelper()
+    private let chatGPTOAuthHelper = ChatGPTOAuthHelper()
 
     private override init() {
         super.init()
+        isChatGPTConnected = KeychainHelper.shared.read(for: AppConstants.Keychain.chatgptConnected) == "true"
     }
 
     // MARK: - Apple Sign In
@@ -61,11 +64,29 @@ final class AuthManager: NSObject {
         isLoading = false
     }
 
+    // MARK: - ChatGPT Connect
+
+    func connectChatGPT(anchor: ASPresentationAnchor) async throws {
+        let result = try await chatGPTOAuthHelper.startOAuthFlow(anchor: anchor)
+        let _: ChatGPTConnectResponse = try await APIClient.shared.post(
+            endpoint: "/auth/chatgpt/connect",
+            body: ChatGPTAuthRequest(
+                authorizationCode: result.code,
+                redirectURI: result.redirectURI,
+                codeVerifier: result.codeVerifier
+            )
+        )
+        _ = KeychainHelper.shared.save("true", for: AppConstants.Keychain.chatgptConnected)
+        isChatGPTConnected = true
+    }
+
     // MARK: - Sign Out
 
     func signOut() {
         _ = KeychainHelper.shared.delete(for: AppConstants.Keychain.jwtToken)
         _ = KeychainHelper.shared.delete(for: AppConstants.Keychain.refreshToken)
+        _ = KeychainHelper.shared.delete(for: AppConstants.Keychain.chatgptConnected)
+        isChatGPTConnected = false
         jwtToken = nil
         currentUser = nil
         isAuthenticated = false

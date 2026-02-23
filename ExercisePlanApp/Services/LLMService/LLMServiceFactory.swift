@@ -5,6 +5,8 @@ enum LLMServiceFactory {
         switch provider {
         case .openAI:
             return OpenAIService(apiKey: apiKey)
+        case .codex:
+            return OpenAIService(apiKey: apiKey, model: LLMProviderType.codex.modelName)
         case .gemini:
             return GeminiService(apiKey: apiKey)
         }
@@ -21,7 +23,7 @@ enum LLMServiceFactory {
 
         let keychainKey: String
         switch provider {
-        case .openAI:
+        case .openAI, .codex:
             keychainKey = AppConstants.Keychain.openAIAPIKey
         case .gemini:
             keychainKey = AppConstants.Keychain.geminiAPIKey

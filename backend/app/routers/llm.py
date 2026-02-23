@@ -28,7 +28,11 @@ async def _handle_llm_request(
         )
 
     try:
-        return await proxy_llm_request(body, google_refresh_token=current_user.google_refresh_token)
+        return await proxy_llm_request(
+            body,
+            google_refresh_token=current_user.google_refresh_token,
+            openai_refresh_token=current_user.openai_refresh_token,
+        )
     except ValueError as exc:
         logger.error("LLM proxy error for user %d: %s", current_user.id, exc)
         raise HTTPException(

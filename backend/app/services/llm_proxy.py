@@ -6,11 +6,15 @@ import httpx
 
 from app.config import settings
 from app.schemas.chat import LLMProxyRequest, LLMProxyResponse, Message
+from app.services.openai_auth import OPENAI_TOKEN_URL, OPENAI_CLIENT_ID as OPENAI_OAUTH_CLIENT_ID
 
 logger = logging.getLogger(__name__)
 
 OPENAI_CHAT_URL = "https://api.openai.com/v1/chat/completions"
 OPENAI_DEFAULT_MODEL = "gpt-4o-mini"
+
+# OpenAI Responses API (used with ChatGPT OAuth)
+OPENAI_RESPONSES_URL = "https://api.openai.com/v1/responses"
 
 # Gemini CLI uses the Cloud Code Private API, NOT generativelanguage.googleapis.com
 CLOUDCODE_BASE_URL = "https://cloudcode-pa.googleapis.com"
@@ -249,10 +253,155 @@ async def call_gemini(
     )
 
 
+async def _refresh_openai_access_token(refresh_token: str) -> str:
+    """Exchange an OpenAI refresh token for a new access token."""
+    async with httpx.AsyncClient(timeout=15.0) as client:
+        resp = await client.post(
+            OPENAI_TOKEN_URL,
+            data={
+                "grant_type": "refresh_token",
+                "refresh_token": refresh_token,
+                "client_id": OPENAI_OAUTH_CLIENT_ID,
+            },
+        )
+        if resp.status_code != 200:
+            logger.error("OpenAI token refresh failed: %s", resp.text)
+            raise ValueError(f"OpenAI token refresh failed: {resp.status_code}")
+        return resp.json()["access_token"]
+
+
+def _messages_to_responses_api_input(
+    messages: list[Message],
+) -> tuple[str | None, list[dict[str, Any]]]:
+    """Convert chat messages to OpenAI Responses API format.
+
+    Returns (system_instructions, input_messages).
+    """
+    system_parts: list[str] = []
+    input_items: list[dict[str, Any]] = []
+
+    for msg in messages:
+        if msg.role == "system":
+            system_parts.append(msg.content)
+        else:
+            input_items.append({
+                "role": msg.role,
+                "content": msg.content,
+            })
+
+    instructions = "\n".join(system_parts) if system_parts else None
+    return instructions, input_items
+
+
+async def call_codex(
+    request: LLMProxyRequest,
+    openai_refresh_token: str | None = None,
+) -> LLMProxyResponse:
+    """OpenAI Codex — OAuth (Responses API) or API key (Chat Completions) fallback."""
+    model = request.model or settings.codex_default_model
+
+    if openai_refresh_token:
+        # OAuth path: Responses API
+        access_token = await _refresh_openai_access_token(openai_refresh_token)
+
+        instructions, input_items = _messages_to_responses_api_input(request.messages)
+        payload: dict[str, Any] = {
+            "model": model,
+            "input": input_items,
+        }
+        if instructions:
+            payload["instructions"] = instructions
+        if request.temperature is not None:
+            payload["temperature"] = request.temperature
+
+        async with httpx.AsyncClient(timeout=60.0) as client:
+            response = await client.post(
+                OPENAI_RESPONSES_URL,
+                json=payload,
+                headers={
+                    "Authorization": f"Bearer {access_token}",
+                    "Content-Type": "application/json",
+                },
+            )
+            if response.status_code != 200:
+                logger.error("Codex Responses API error %d: %s", response.status_code, response.text)
+                raise ValueError(f"Codex API error: {response.status_code}")
+
+            data = response.json()
+
+        # Extract text from Responses API output
+        content = ""
+        for item in data.get("output", []):
+            if item.get("type") == "message":
+                for part in item.get("content", []):
+                    if part.get("type") == "output_text":
+                        content += part.get("text", "")
+
+        if not content:
+            logger.error("Codex Responses API returned no text content: %s", data)
+            raise ValueError("Codex returned no text content")
+
+        usage = data.get("usage", {})
+        return LLMProxyResponse(
+            content=content,
+            provider="codex",
+            model=model,
+            usage={
+                "prompt_tokens": usage.get("input_tokens", 0),
+                "completion_tokens": usage.get("output_tokens", 0),
+                "total_tokens": usage.get("input_tokens", 0) + usage.get("output_tokens", 0),
+            },
+        )
+
+    elif settings.openai_api_key:
+        # Fallback: server API key → Chat Completions API
+        payload_cc = {
+            "model": model,
+            "messages": [{"role": m.role, "content": m.content} for m in request.messages],
+            "max_tokens": request.max_tokens,
+            "temperature": request.temperature,
+        }
+
+        async with httpx.AsyncClient(timeout=60.0) as client:
+            response = await client.post(
+                OPENAI_CHAT_URL,
+                json=payload_cc,
+                headers={
+                    "Authorization": f"Bearer {settings.openai_api_key}",
+                    "Content-Type": "application/json",
+                },
+            )
+            if response.status_code != 200:
+                logger.error("Codex API error %d: %s", response.status_code, response.text)
+                raise ValueError(f"Codex API error: {response.status_code}")
+
+            data = response.json()
+
+        content = data["choices"][0]["message"]["content"]
+        usage = data.get("usage", {})
+
+        return LLMProxyResponse(
+            content=content,
+            provider="codex",
+            model=model,
+            usage={
+                "prompt_tokens": usage.get("prompt_tokens", 0),
+                "completion_tokens": usage.get("completion_tokens", 0),
+                "total_tokens": usage.get("total_tokens", 0),
+            },
+        )
+
+    else:
+        raise ValueError("No Codex credentials available (neither ChatGPT OAuth nor API key)")
+
+
 async def proxy_llm_request(
     request: LLMProxyRequest,
     google_refresh_token: str | None = None,
+    openai_refresh_token: str | None = None,
 ) -> LLMProxyResponse:
     if request.provider == "gemini":
         return await call_gemini(request, google_refresh_token=google_refresh_token)
+    elif request.provider == "codex":
+        return await call_codex(request, openai_refresh_token=openai_refresh_token)
     return await call_openai(request)

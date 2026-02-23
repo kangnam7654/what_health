@@ -7,6 +7,7 @@ enum AppConstants {
         static let selectedProvider = "com.exerciseplan.selectedprovider"
         static let jwtToken = "com.exerciseplan.jwt.token"
         static let refreshToken = "com.exerciseplan.jwt.refresh"
+        static let chatgptConnected = "com.exerciseplan.chatgpt.connected"
     }
 
     enum Defaults {
