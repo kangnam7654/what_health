@@ -1,0 +1,14 @@
+/Users/kangnam/projects/what_health/backend-rust/target/debug/deps/thiserror-ab627935712790c5.d: /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/lib.rs /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/aserror.rs /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/display.rs /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/var.rs /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/private.rs /Users/kangnam/projects/what_health/backend-rust/target/debug/build/thiserror-c60931e4e8dce25d/out/private.rs
+
+/Users/kangnam/projects/what_health/backend-rust/target/debug/deps/libthiserror-ab627935712790c5.rlib: /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/lib.rs /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/aserror.rs /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/display.rs /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/var.rs /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/private.rs /Users/kangnam/projects/what_health/backend-rust/target/debug/build/thiserror-c60931e4e8dce25d/out/private.rs
+
+/Users/kangnam/projects/what_health/backend-rust/target/debug/deps/libthiserror-ab627935712790c5.rmeta: /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/lib.rs /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/aserror.rs /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/display.rs /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/var.rs /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/private.rs /Users/kangnam/projects/what_health/backend-rust/target/debug/build/thiserror-c60931e4e8dce25d/out/private.rs
+
+/Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/lib.rs:
+/Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/aserror.rs:
+/Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/display.rs:
+/Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/var.rs:
+/Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/private.rs:
+/Users/kangnam/projects/what_health/backend-rust/target/debug/build/thiserror-c60931e4e8dce25d/out/private.rs:
+
+# env-dep:OUT_DIR=/Users/kangnam/projects/what_health/backend-rust/target/debug/build/thiserror-c60931e4e8dce25d/out

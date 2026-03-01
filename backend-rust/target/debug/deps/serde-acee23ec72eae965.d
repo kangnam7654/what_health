@@ -1,0 +1,14 @@
+/Users/kangnam/projects/what_health/backend-rust/target/debug/deps/serde-acee23ec72eae965.d: /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/kangnam/projects/what_health/backend-rust/target/debug/build/serde-c0c83e196afbc015/out/private.rs
+
+/Users/kangnam/projects/what_health/backend-rust/target/debug/deps/libserde-acee23ec72eae965.rlib: /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/kangnam/projects/what_health/backend-rust/target/debug/build/serde-c0c83e196afbc015/out/private.rs
+
+/Users/kangnam/projects/what_health/backend-rust/target/debug/deps/libserde-acee23ec72eae965.rmeta: /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/kangnam/projects/what_health/backend-rust/target/debug/build/serde-c0c83e196afbc015/out/private.rs
+
+/Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs:
+/Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs:
+/Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs:
+/Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs:
+/Users/kangnam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs:
+/Users/kangnam/projects/what_health/backend-rust/target/debug/build/serde-c0c83e196afbc015/out/private.rs:
+
+# env-dep:OUT_DIR=/Users/kangnam/projects/what_health/backend-rust/target/debug/build/serde-c0c83e196afbc015/out
