@@ -1,0 +1,725 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 63;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0228B6C88A8033B97A688643 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8312BA9601D003C6FDE5AAE /* SettingsView.swift */; };
+		037B575AA80F4BF7BD0E6A1D /* YouTubeURLValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BECE296A1B50A39283F4A5 /* YouTubeURLValidator.swift */; };
+		09E92BBCD229B1F23E6F2E27 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0048F63269A592D7995F41 /* ChatView.swift */; };
+		0B4E83A556D8591F8581BB83 /* WorkoutTrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E18E14F9A12472F3C6E52BD /* WorkoutTrackingViewModel.swift */; };
+		0C5F03E0C0CAF6928C8A04F6 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 21C0E614C1DB9ADB21C59C98 /* GoogleMobileAds */; };
+		139D87CA70335F85EC00B547 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07015ABF387A77250417CE /* AuthManager.swift */; };
+		15A87A09CB46DB08DD0E46DC /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A663537D6AC84374C30A2 /* KeychainHelper.swift */; };
+		1862785F7C932E860D2CAE98 /* BannerAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31720E723F6CA9D56A0E370C /* BannerAdView.swift */; };
+		20B908ADAF306B0ADC1F208B /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D179067BC03BFAE86E4CF157 /* SettingsViewModel.swift */; };
+		32AFBB33B3BC4CCD28D25C3B /* LLMServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3B6E94896B0544B53B289A /* LLMServiceFactory.swift */; };
+		342ED94B243C41FD41DFCE2A /* PlanParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA091D90F4F3A96A21884ED1 /* PlanParser.swift */; };
+		3B156CEBC14ACA55868F541A /* PromptBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D8057D0918FE31CDAF0D3F /* PromptBuilder.swift */; };
+		3BDE2BD2A751229BFF60B263 /* WhatHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350F33601970C8E0EC14E332 /* WhatHealth.swift */; };
+		3DB717EC9B0891DE16647A1B /* WhatHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FDD24C53A32B5D3E89681 /* WhatHealthApp.swift */; };
+		4083C5E095E53618F81A0E13 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CF380AD5E8B82AEA6D6E9B /* UserProfile.swift */; };
+		48DDB99C575786E7BC5AC894 /* ChatResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3DECAF077B87F7DFC8672C /* ChatResponseParser.swift */; };
+		4B70BEF3444E621FDC9C6D81 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC476DDBACAF54EAFB43DF2 /* SubscriptionView.swift */; };
+		5D934266700A106D69B11D58 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993E2699462D12C1870635E /* Date+Extensions.swift */; };
+		5D9642C5799BC38729AF7B65 /* GeminiModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14C155D94EEC0E9DECD24D0 /* GeminiModels.swift */; };
+		5E44CB7E7ED4D2F91602CA72 /* PlanGeneratorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCD9B2BA54F844F30DA2AEC /* PlanGeneratorViewModel.swift */; };
+		5F7D0D0EBF0A0ACA9AD45022 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49519FD7B0B5FA6991223736 /* AccountView.swift */; };
+		63EABEEEB19BA869F9C583D6 /* WorkoutTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BBB59A926112F495DC7899 /* WorkoutTrackingView.swift */; };
+		68BE9EFF71430A72B9830AF2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CBEE5FD7BA886ACF38966D /* Constants.swift */; };
+		6CA7553D7B278D27C8B85C96 /* ChatSessionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C226CEAE7D09A7924117372E /* ChatSessionListView.swift */; };
+		75A32D2BAE9C75D693BFF3FD /* GoogleOAuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5847AEBEF102F4286E7A0DD8 /* GoogleOAuthHelper.swift */; };
+		77ECBF03D7EEFBDA2F179147 /* WhatHealthCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A51C0076B81016DE9BC5BE /* WhatHealthCardView.swift */; };
+		83B2E2BD4C72A0D6E865BD13 /* OpenAIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4A909E895D305367923F52 /* OpenAIModels.swift */; };
+		865E0615BE1197F9AD428563 /* PlanResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28A7027A5CAC418FE0B4297 /* PlanResultView.swift */; };
+		893A0345557E9FDF982B1CF2 /* CodableTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEC8D63D594F21D83F0B609 /* CodableTypes.swift */; };
+		8982047D5457B580F43058E3 /* PlanHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD95E56C7B15E518E732594A /* PlanHistoryViewModel.swift */; };
+		8A2A9C093013F7EBC7B61565 /* PlanGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248DBF485BC88F0122F626FF /* PlanGeneratorView.swift */; };
+		8AAA9DDC4BB108E59DB9A8FB /* LLMServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A76DF85CA387F49D85A415F /* LLMServiceProtocol.swift */; };
+		8EE96B8766F0C2AF95D6BA36 /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D616F34805E3929B4453973C /* LoadingOverlay.swift */; };
+		8FE4CA7E3D429E251FBBD763 /* ErrorBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F03E35D45FF092C6053713 /* ErrorBannerView.swift */; };
+		944BBD20F42C6B7772EE8806 /* BackendLLMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDEF65B9DD02681A9449EC1 /* BackendLLMService.swift */; };
+		99A444A89AE8849B015957E9 /* QuotaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5D3068839C1EF84D74D6B7 /* QuotaView.swift */; };
+		99D284156FF5482FEDB57975 /* PlanDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C482B81F80E3BC972A2E5541 /* PlanDetailView.swift */; };
+		A091BA3043240AE8719321A2 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8065337F7F2F1F02ADB287 /* ChatViewModel.swift */; };
+		AC214E41B5B641D7FCA81BA7 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444B77114F3713BB7AD0FE6 /* Enums.swift */; };
+		B4C94086C1589E9DA535F666 /* AuthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019C514D47B330742D02FF35 /* AuthUser.swift */; };
+		B50BB7CE6A5D1E9386EFD947 /* APIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8407643CA1FDDB308EFB682F /* APIModels.swift */; };
+		C6E49DB72175BB8AFA619B76 /* WorkoutLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E045557AAF639D116C9D0D1E /* WorkoutLog.swift */; };
+		CDF6E2C142B15453B9F6D604 /* ClipboardPasteSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4FBE95575E961409BEB46 /* ClipboardPasteSheet.swift */; };
+		D15F5BAFD7669F2DE6089F8A /* SavedExerciseVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DBD5DE72631D10EB49FDEF /* SavedExerciseVideo.swift */; };
+		D6116C0197663CB8F6E31932 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7511A8537A2252FB25C972C6 /* LoginView.swift */; };
+		D66D10D5270FFCA64BD07846 /* ExerciseVideoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930A18CE214938CD36A73EB9 /* ExerciseVideoButton.swift */; };
+		DBB6EDBC11850E1605360673 /* ChatGPTOAuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211819724E254089B8BAD3E4 /* ChatGPTOAuthHelper.swift */; };
+		E594215F63064D13430A0DFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA36F23ABBE0EE7834483A3 /* ContentView.swift */; };
+		E5FF663A1C814A4C562E272B /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFFAFB703FA255A8E946B7F /* SafariView.swift */; };
+		E866ACC44DDEA40889129BC4 /* ChatModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9D361087F80844599C5D45 /* ChatModels.swift */; };
+		F529488E6C0854B3F706A81A /* ProviderSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537FC26294B88C83B595A349 /* ProviderSettingsView.swift */; };
+		F65BD132B44850DFF2996159 /* GeminiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B3C75BF36C0AF6773E824 /* GeminiService.swift */; };
+		F95F399AA32328DAD1DB41AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50288F140F97A2E82BADE1C2 /* Assets.xcassets */; };
+		FB4BDFD00B158C656AA096CB /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411EA1CE4BBEF638C7246CB9 /* OpenAIService.swift */; };
+		FCE0F14AC207802731ECA84F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08D43EB04602D62FC8D9896 /* APIClient.swift */; };
+		FD4FFC4EEC7E1600D2FAC55D /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB593B37542A54839A7ABDD4 /* StoreManager.swift */; };
+		FDED983155AEA5C89A21819C /* AdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0DB78290840CF1210027C8 /* AdManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		019C514D47B330742D02FF35 /* AuthUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUser.swift; sourceTree = "<group>"; };
+		04BECE296A1B50A39283F4A5 /* YouTubeURLValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeURLValidator.swift; sourceTree = "<group>"; };
+		0A76DF85CA387F49D85A415F /* LLMServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLMServiceProtocol.swift; sourceTree = "<group>"; };
+		0CFFAFB703FA255A8E946B7F /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		1A3B6E94896B0544B53B289A /* LLMServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLMServiceFactory.swift; sourceTree = "<group>"; };
+		1A8065337F7F2F1F02ADB287 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		1F0DB78290840CF1210027C8 /* AdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdManager.swift; sourceTree = "<group>"; };
+		211819724E254089B8BAD3E4 /* ChatGPTOAuthHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTOAuthHelper.swift; sourceTree = "<group>"; };
+		248DBF485BC88F0122F626FF /* PlanGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanGeneratorView.swift; sourceTree = "<group>"; };
+		28DBD5DE72631D10EB49FDEF /* SavedExerciseVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedExerciseVideo.swift; sourceTree = "<group>"; };
+		31720E723F6CA9D56A0E370C /* BannerAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdView.swift; sourceTree = "<group>"; };
+		350F33601970C8E0EC14E332 /* WhatHealth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatHealth.swift; sourceTree = "<group>"; };
+		39D8057D0918FE31CDAF0D3F /* PromptBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptBuilder.swift; sourceTree = "<group>"; };
+		3C07015ABF387A77250417CE /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		3D4A909E895D305367923F52 /* OpenAIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIModels.swift; sourceTree = "<group>"; };
+		411EA1CE4BBEF638C7246CB9 /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
+		41F03E35D45FF092C6053713 /* ErrorBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorBannerView.swift; sourceTree = "<group>"; };
+		49519FD7B0B5FA6991223736 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		4BC476DDBACAF54EAFB43DF2 /* SubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
+		50288F140F97A2E82BADE1C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		537FC26294B88C83B595A349 /* ProviderSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderSettingsView.swift; sourceTree = "<group>"; };
+		5847AEBEF102F4286E7A0DD8 /* GoogleOAuthHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleOAuthHelper.swift; sourceTree = "<group>"; };
+		6444B77114F3713BB7AD0FE6 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		6546E6AB4B41123F2082967F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6B0048F63269A592D7995F41 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		6DA36F23ABBE0EE7834483A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6E18E14F9A12472F3C6E52BD /* WorkoutTrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrackingViewModel.swift; sourceTree = "<group>"; };
+		7197D0D9EFBD323982059705 /* WhatHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7511A8537A2252FB25C972C6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		7CDEF65B9DD02681A9449EC1 /* BackendLLMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendLLMService.swift; sourceTree = "<group>"; };
+		7E9D361087F80844599C5D45 /* ChatModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModels.swift; sourceTree = "<group>"; };
+		8407643CA1FDDB308EFB682F /* APIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModels.swift; sourceTree = "<group>"; };
+		87A51C0076B81016DE9BC5BE /* WhatHealthCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatHealthCardView.swift; sourceTree = "<group>"; };
+		87CBEE5FD7BA886ACF38966D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8E4B3C75BF36C0AF6773E824 /* GeminiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiService.swift; sourceTree = "<group>"; };
+		930A18CE214938CD36A73EB9 /* ExerciseVideoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseVideoButton.swift; sourceTree = "<group>"; };
+		9CC4FBE95575E961409BEB46 /* ClipboardPasteSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardPasteSheet.swift; sourceTree = "<group>"; };
+		A4BBB59A926112F495DC7899 /* WorkoutTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTrackingView.swift; sourceTree = "<group>"; };
+		A8312BA9601D003C6FDE5AAE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A993E2699462D12C1870635E /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		AAEC8D63D594F21D83F0B609 /* CodableTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableTypes.swift; sourceTree = "<group>"; };
+		AB593B37542A54839A7ABDD4 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		B08D43EB04602D62FC8D9896 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		BCCD9B2BA54F844F30DA2AEC /* PlanGeneratorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanGeneratorViewModel.swift; sourceTree = "<group>"; };
+		BD95E56C7B15E518E732594A /* PlanHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanHistoryViewModel.swift; sourceTree = "<group>"; };
+		C226CEAE7D09A7924117372E /* ChatSessionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSessionListView.swift; sourceTree = "<group>"; };
+		C482B81F80E3BC972A2E5541 /* PlanDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailView.swift; sourceTree = "<group>"; };
+		CB6A663537D6AC84374C30A2 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		D14C155D94EEC0E9DECD24D0 /* GeminiModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiModels.swift; sourceTree = "<group>"; };
+		D179067BC03BFAE86E4CF157 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		D616F34805E3929B4453973C /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
+		D9D0E478471287750126C68B /* WhatHealthApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhatHealthApp.entitlements; sourceTree = "<group>"; };
+		DA091D90F4F3A96A21884ED1 /* PlanParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanParser.swift; sourceTree = "<group>"; };
+		E045557AAF639D116C9D0D1E /* WorkoutLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutLog.swift; sourceTree = "<group>"; };
+		E28A7027A5CAC418FE0B4297 /* PlanResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanResultView.swift; sourceTree = "<group>"; };
+		E63FDD24C53A32B5D3E89681 /* WhatHealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatHealthApp.swift; sourceTree = "<group>"; };
+		E6CF380AD5E8B82AEA6D6E9B /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		FB3DECAF077B87F7DFC8672C /* ChatResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatResponseParser.swift; sourceTree = "<group>"; };
+		FE5D3068839C1EF84D74D6B7 /* QuotaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotaView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		505DD7A7F08983036DE2DB74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C5F03E0C0CAF6928C8A04F6 /* GoogleMobileAds in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0951DFC72466FAF94A95C885 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				C226CEAE7D09A7924117372E /* ChatSessionListView.swift */,
+				6B0048F63269A592D7995F41 /* ChatView.swift */,
+				87A51C0076B81016DE9BC5BE /* WhatHealthCardView.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		1AAD1BF97EFBE5D576BE4792 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				AB593B37542A54839A7ABDD4 /* StoreManager.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		22162D9D1A2F4B7B79BC1CC4 /* PlanHistory */ = {
+			isa = PBXGroup;
+			children = (
+				C482B81F80E3BC972A2E5541 /* PlanDetailView.swift */,
+			);
+			path = PlanHistory;
+			sourceTree = "<group>";
+		};
+		24261D8F89F75345EAD1F120 /* WorkoutTracking */ = {
+			isa = PBXGroup;
+			children = (
+				A4BBB59A926112F495DC7899 /* WorkoutTrackingView.swift */,
+			);
+			path = WorkoutTracking;
+			sourceTree = "<group>";
+		};
+		2D143E3A611584311D39CAA1 /* Ads */ = {
+			isa = PBXGroup;
+			children = (
+				31720E723F6CA9D56A0E370C /* BannerAdView.swift */,
+			);
+			path = Ads;
+			sourceTree = "<group>";
+		};
+		34BA1273DF314C634783AEE7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				87CBEE5FD7BA886ACF38966D /* Constants.swift */,
+				A993E2699462D12C1870635E /* Date+Extensions.swift */,
+				CB6A663537D6AC84374C30A2 /* KeychainHelper.swift */,
+				04BECE296A1B50A39283F4A5 /* YouTubeURLValidator.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		4442A3FE89CCD84055EE044B /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				7511A8537A2252FB25C972C6 /* LoginView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		4DBA2CFCC36956EF82AD3C43 /* LLMService */ = {
+			isa = PBXGroup;
+			children = (
+				7CDEF65B9DD02681A9449EC1 /* BackendLLMService.swift */,
+				D14C155D94EEC0E9DECD24D0 /* GeminiModels.swift */,
+				8E4B3C75BF36C0AF6773E824 /* GeminiService.swift */,
+				1A3B6E94896B0544B53B289A /* LLMServiceFactory.swift */,
+				0A76DF85CA387F49D85A415F /* LLMServiceProtocol.swift */,
+				3D4A909E895D305367923F52 /* OpenAIModels.swift */,
+				411EA1CE4BBEF638C7246CB9 /* OpenAIService.swift */,
+			);
+			path = LLMService;
+			sourceTree = "<group>";
+		};
+		5406F4909C9CAA9368FA4FE6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2D143E3A611584311D39CAA1 /* Ads */,
+				4442A3FE89CCD84055EE044B /* Auth */,
+				0951DFC72466FAF94A95C885 /* Chat */,
+				F1E27483D0B2C65F7D10A688 /* Components */,
+				6101546600087E22FE0CBB68 /* PlanGenerator */,
+				22162D9D1A2F4B7B79BC1CC4 /* PlanHistory */,
+				B7E66DF2678F0425938E80C4 /* Settings */,
+				24261D8F89F75345EAD1F120 /* WorkoutTracking */,
+				6DA36F23ABBE0EE7834483A3 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5AE0A79B6701284808FB1288 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B08D43EB04602D62FC8D9896 /* APIClient.swift */,
+				8407643CA1FDDB308EFB682F /* APIModels.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5F06E4BBB045321993F6CD6A /* WhatHealthApp */ = {
+			isa = PBXGroup;
+			children = (
+				CD0BE6D064BAA15D8C67ECCA /* Models */,
+				76BCE957362CEDBCBEC704DA /* Services */,
+				34BA1273DF314C634783AEE7 /* Utilities */,
+				EDD4B7AF16E7902E510D635A /* ViewModels */,
+				5406F4909C9CAA9368FA4FE6 /* Views */,
+				50288F140F97A2E82BADE1C2 /* Assets.xcassets */,
+				6546E6AB4B41123F2082967F /* Info.plist */,
+				D9D0E478471287750126C68B /* WhatHealthApp.entitlements */,
+				E63FDD24C53A32B5D3E89681 /* WhatHealthApp.swift */,
+			);
+			path = WhatHealthApp;
+			sourceTree = "<group>";
+		};
+		6101546600087E22FE0CBB68 /* PlanGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				248DBF485BC88F0122F626FF /* PlanGeneratorView.swift */,
+				E28A7027A5CAC418FE0B4297 /* PlanResultView.swift */,
+			);
+			path = PlanGenerator;
+			sourceTree = "<group>";
+		};
+		729D86D938E2D10DB2CD9A83 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				3C07015ABF387A77250417CE /* AuthManager.swift */,
+				019C514D47B330742D02FF35 /* AuthUser.swift */,
+				211819724E254089B8BAD3E4 /* ChatGPTOAuthHelper.swift */,
+				5847AEBEF102F4286E7A0DD8 /* GoogleOAuthHelper.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		76BCE957362CEDBCBEC704DA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7FBF9B716E8386B8949DDB14 /* Ads */,
+				729D86D938E2D10DB2CD9A83 /* Auth */,
+				4DBA2CFCC36956EF82AD3C43 /* LLMService */,
+				5AE0A79B6701284808FB1288 /* Network */,
+				1AAD1BF97EFBE5D576BE4792 /* Store */,
+				FB3DECAF077B87F7DFC8672C /* ChatResponseParser.swift */,
+				DA091D90F4F3A96A21884ED1 /* PlanParser.swift */,
+				39D8057D0918FE31CDAF0D3F /* PromptBuilder.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		7FBF9B716E8386B8949DDB14 /* Ads */ = {
+			isa = PBXGroup;
+			children = (
+				1F0DB78290840CF1210027C8 /* AdManager.swift */,
+			);
+			path = Ads;
+			sourceTree = "<group>";
+		};
+		8B7590FB9454A0B4A747E5CD = {
+			isa = PBXGroup;
+			children = (
+				5F06E4BBB045321993F6CD6A /* WhatHealthApp */,
+				F4899A9F9ADDC90A67CF9AD0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B7E66DF2678F0425938E80C4 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				49519FD7B0B5FA6991223736 /* AccountView.swift */,
+				537FC26294B88C83B595A349 /* ProviderSettingsView.swift */,
+				FE5D3068839C1EF84D74D6B7 /* QuotaView.swift */,
+				A8312BA9601D003C6FDE5AAE /* SettingsView.swift */,
+				4BC476DDBACAF54EAFB43DF2 /* SubscriptionView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		CD0BE6D064BAA15D8C67ECCA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7E9D361087F80844599C5D45 /* ChatModels.swift */,
+				AAEC8D63D594F21D83F0B609 /* CodableTypes.swift */,
+				6444B77114F3713BB7AD0FE6 /* Enums.swift */,
+				28DBD5DE72631D10EB49FDEF /* SavedExerciseVideo.swift */,
+				E6CF380AD5E8B82AEA6D6E9B /* UserProfile.swift */,
+				350F33601970C8E0EC14E332 /* WhatHealth.swift */,
+				E045557AAF639D116C9D0D1E /* WorkoutLog.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EDD4B7AF16E7902E510D635A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1A8065337F7F2F1F02ADB287 /* ChatViewModel.swift */,
+				BCCD9B2BA54F844F30DA2AEC /* PlanGeneratorViewModel.swift */,
+				BD95E56C7B15E518E732594A /* PlanHistoryViewModel.swift */,
+				D179067BC03BFAE86E4CF157 /* SettingsViewModel.swift */,
+				6E18E14F9A12472F3C6E52BD /* WorkoutTrackingViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F1E27483D0B2C65F7D10A688 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9CC4FBE95575E961409BEB46 /* ClipboardPasteSheet.swift */,
+				41F03E35D45FF092C6053713 /* ErrorBannerView.swift */,
+				930A18CE214938CD36A73EB9 /* ExerciseVideoButton.swift */,
+				D616F34805E3929B4453973C /* LoadingOverlay.swift */,
+				0CFFAFB703FA255A8E946B7F /* SafariView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F4899A9F9ADDC90A67CF9AD0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7197D0D9EFBD323982059705 /* WhatHealth.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FBC3A736EFDEE2D5B19AB986 /* WhatHealth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14294075DC2B070F406E05F6 /* Build configuration list for PBXNativeTarget "WhatHealth" */;
+			buildPhases = (
+				0CDEBFA440FC883F9F695A66 /* Sources */,
+				21C6FD69B32CF28A87F4A8B0 /* Resources */,
+				505DD7A7F08983036DE2DB74 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WhatHealth;
+			packageProductDependencies = (
+				21C0E614C1DB9ADB21C59C98 /* GoogleMobileAds */,
+			);
+			productName = WhatHealth;
+			productReference = 7197D0D9EFBD323982059705 /* WhatHealth.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CAA81D7AC5306211309FC279 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					FBC3A736EFDEE2D5B19AB986 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5CC01F310013F4B02520F2B6 /* Build configuration list for PBXProject "WhatHealth" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 8B7590FB9454A0B4A747E5CD;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E9EB58F76E5631BC75D5B92F /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FBC3A736EFDEE2D5B19AB986 /* WhatHealth */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		21C6FD69B32CF28A87F4A8B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F95F399AA32328DAD1DB41AE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0CDEBFA440FC883F9F695A66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCE0F14AC207802731ECA84F /* APIClient.swift in Sources */,
+				B50BB7CE6A5D1E9386EFD947 /* APIModels.swift in Sources */,
+				5F7D0D0EBF0A0ACA9AD45022 /* AccountView.swift in Sources */,
+				FDED983155AEA5C89A21819C /* AdManager.swift in Sources */,
+				139D87CA70335F85EC00B547 /* AuthManager.swift in Sources */,
+				B4C94086C1589E9DA535F666 /* AuthUser.swift in Sources */,
+				944BBD20F42C6B7772EE8806 /* BackendLLMService.swift in Sources */,
+				1862785F7C932E860D2CAE98 /* BannerAdView.swift in Sources */,
+				DBB6EDBC11850E1605360673 /* ChatGPTOAuthHelper.swift in Sources */,
+				E866ACC44DDEA40889129BC4 /* ChatModels.swift in Sources */,
+				48DDB99C575786E7BC5AC894 /* ChatResponseParser.swift in Sources */,
+				6CA7553D7B278D27C8B85C96 /* ChatSessionListView.swift in Sources */,
+				09E92BBCD229B1F23E6F2E27 /* ChatView.swift in Sources */,
+				A091BA3043240AE8719321A2 /* ChatViewModel.swift in Sources */,
+				CDF6E2C142B15453B9F6D604 /* ClipboardPasteSheet.swift in Sources */,
+				893A0345557E9FDF982B1CF2 /* CodableTypes.swift in Sources */,
+				68BE9EFF71430A72B9830AF2 /* Constants.swift in Sources */,
+				E594215F63064D13430A0DFC /* ContentView.swift in Sources */,
+				5D934266700A106D69B11D58 /* Date+Extensions.swift in Sources */,
+				AC214E41B5B641D7FCA81BA7 /* Enums.swift in Sources */,
+				8FE4CA7E3D429E251FBBD763 /* ErrorBannerView.swift in Sources */,
+				D66D10D5270FFCA64BD07846 /* ExerciseVideoButton.swift in Sources */,
+				5D9642C5799BC38729AF7B65 /* GeminiModels.swift in Sources */,
+				F65BD132B44850DFF2996159 /* GeminiService.swift in Sources */,
+				75A32D2BAE9C75D693BFF3FD /* GoogleOAuthHelper.swift in Sources */,
+				15A87A09CB46DB08DD0E46DC /* KeychainHelper.swift in Sources */,
+				32AFBB33B3BC4CCD28D25C3B /* LLMServiceFactory.swift in Sources */,
+				8AAA9DDC4BB108E59DB9A8FB /* LLMServiceProtocol.swift in Sources */,
+				8EE96B8766F0C2AF95D6BA36 /* LoadingOverlay.swift in Sources */,
+				D6116C0197663CB8F6E31932 /* LoginView.swift in Sources */,
+				83B2E2BD4C72A0D6E865BD13 /* OpenAIModels.swift in Sources */,
+				FB4BDFD00B158C656AA096CB /* OpenAIService.swift in Sources */,
+				99D284156FF5482FEDB57975 /* PlanDetailView.swift in Sources */,
+				8A2A9C093013F7EBC7B61565 /* PlanGeneratorView.swift in Sources */,
+				5E44CB7E7ED4D2F91602CA72 /* PlanGeneratorViewModel.swift in Sources */,
+				8982047D5457B580F43058E3 /* PlanHistoryViewModel.swift in Sources */,
+				342ED94B243C41FD41DFCE2A /* PlanParser.swift in Sources */,
+				865E0615BE1197F9AD428563 /* PlanResultView.swift in Sources */,
+				3B156CEBC14ACA55868F541A /* PromptBuilder.swift in Sources */,
+				F529488E6C0854B3F706A81A /* ProviderSettingsView.swift in Sources */,
+				99A444A89AE8849B015957E9 /* QuotaView.swift in Sources */,
+				E5FF663A1C814A4C562E272B /* SafariView.swift in Sources */,
+				D15F5BAFD7669F2DE6089F8A /* SavedExerciseVideo.swift in Sources */,
+				0228B6C88A8033B97A688643 /* SettingsView.swift in Sources */,
+				20B908ADAF306B0ADC1F208B /* SettingsViewModel.swift in Sources */,
+				FD4FFC4EEC7E1600D2FAC55D /* StoreManager.swift in Sources */,
+				4B70BEF3444E621FDC9C6D81 /* SubscriptionView.swift in Sources */,
+				4083C5E095E53618F81A0E13 /* UserProfile.swift in Sources */,
+				3BDE2BD2A751229BFF60B263 /* WhatHealth.swift in Sources */,
+				3DB717EC9B0891DE16647A1B /* WhatHealthApp.swift in Sources */,
+				77ECBF03D7EEFBDA2F179147 /* WhatHealthCardView.swift in Sources */,
+				C6E49DB72175BB8AFA619B76 /* WorkoutLog.swift in Sources */,
+				63EABEEEB19BA869F9C583D6 /* WorkoutTrackingView.swift in Sources */,
+				0B4E83A556D8591F8581BB83 /* WorkoutTrackingViewModel.swift in Sources */,
+				037B575AA80F4BF7BD0E6A1D /* YouTubeURLValidator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		08BD437A097F42F561D1456C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		5CE5BE25E6D6BCF1C0D8E783 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WhatHealthApp/WhatHealthApp.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8296S6Q7XV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WhatHealthApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.whathealth.app;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8F281689445F3097D070FD69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WhatHealthApp/WhatHealthApp.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8296S6Q7XV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WhatHealthApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.whathealth.app;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B022A58C3B687EAAD78EB46F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14294075DC2B070F406E05F6 /* Build configuration list for PBXNativeTarget "WhatHealth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F281689445F3097D070FD69 /* Debug */,
+				5CE5BE25E6D6BCF1C0D8E783 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5CC01F310013F4B02520F2B6 /* Build configuration list for PBXProject "WhatHealth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B022A58C3B687EAAD78EB46F /* Debug */,
+				08BD437A097F42F561D1456C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E9EB58F76E5631BC75D5B92F /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		21C0E614C1DB9ADB21C59C98 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9EB58F76E5631BC75D5B92F /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = CAA81D7AC5306211309FC279 /* Project object */;
+}
