@@ -62,7 +62,9 @@ final class PlanGeneratorViewModel {
         errorMessage = nil
         generatedPlan = nil
 
-        let sortedDays = Array(selectedDays).sorted { $0.rawValue < $1.rawValue }
+        // 요청 시점의 선택 요일을 고정해 두고, 응답이 정확히 같은 요일 집합인지 검증합니다.
+        let requestedDays = selectedDays
+        let sortedDays = Array(requestedDays).sorted { $0.rawValue < $1.rawValue }
         let (systemPrompt, userPrompt) = PromptBuilder.buildPlanGenerationPrompt(
             goal: selectedGoal,
             experience: selectedExperience,
@@ -79,7 +81,7 @@ final class PlanGeneratorViewModel {
                 userPrompt: userPrompt
             )
 
-            let parsed = try PlanParser.parse(response: response)
+            let parsed = try PlanParser.parse(response: response, requiredDays: requestedDays)
             generatedPlan = GeneratedPlanResult(
                 title: parsed.title,
                 summary: parsed.summary,
